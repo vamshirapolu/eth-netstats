@@ -4,8 +4,9 @@ var chalk = require('chalk');
 var http = require('http');
 
 // Init WS SECRET
-var WS_SECRET;
+var WS_SECRET = "struesprivateblock";
 
+/*
 if( !_.isUndefined(process.env.WS_SECRET) && !_.isNull(process.env.WS_SECRET) )
 {
 	if( process.env.WS_SECRET.indexOf('|') > 0 )
@@ -28,6 +29,7 @@ else
 		console.error("WS_SECRET NOT SET!!!");
 	}
 }
+*/
 
 var banned = require('./lib/utils/config').banned;
 
@@ -408,6 +410,6 @@ var nodeCleanupTimeout = setInterval( function ()
 
 }, 1000*60*60);
 
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 80);
 
 module.exports = server;
